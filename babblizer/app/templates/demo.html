@@ -1,0 +1,15 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Babblizer</h1>
+  <form action="" method="post" name="login">
+      {{ form.hidden_tag() }}
+      <p>
+          You say...<br>
+          {{ form.build(size=80) }}<br>
+      </p>
+
+      <p><input type="submit" value="I say..."></p>
+  </form>
+{% endblock %}

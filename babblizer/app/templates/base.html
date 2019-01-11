@@ -1,0 +1,26 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - Babblizer</title>
+    {% else %}
+    <title>Babblizer</title>
+    {% endif %}
+  </head>
+  <body>
+     <div>Babblizer: <a href="/babble">Babble</a>
+      <a></a>
+      <a href="/add_a_babble">Add a Babble</a>
+    <hr>
+    {% block content %}{% endblock %}
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <p>{{ message }} </p>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+  </body>
+</html>

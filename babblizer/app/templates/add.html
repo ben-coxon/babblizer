@@ -1,0 +1,20 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Add a Babble</h1>
+  <form action="" method="post" name="add">
+      {{ form.hidden_tag() }}
+      <p>
+          You say...<br>
+          {{ form.yousay(size=80) }}<br>
+      </p>
+      {{ form.hidden_tag() }}
+      <p>
+          I say...<br>
+          {{ form.isay(size=80) }}<br>
+      </p>
+
+      <p><input type="submit" value="Add it!"></p>
+  </form>
+{% endblock %}
