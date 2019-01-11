@@ -1,10 +1,10 @@
 from app import app
 from flask import render_template, flash, redirect, request
 import requests
-from .forms import LoginForm, DemoForm, AddForm
+from .forms import LoginForm, DemoForm, AddForm, GimmeForm
 import sys
 import subprocess
-from .ben_test import BenTest, NewBabble
+from .ben_test import BenTest, NewBabble, GimmeBabble
 
 
 path = "/Users/Gary/Music/Logic/"
@@ -32,5 +32,17 @@ def add_a_babble():
 		print result
 		flash('{}'.format(result))
 	return render_template('add.html',title='Add a Babble',form=form)
+
+@app.route('/gimme', methods=['GET', 'POST'])
+def gimme_a_babble():
+    form = GimmeForm()
+    if request.form:
+        print "Button Pressed"
+        result = GimmeBabble(request.data).gimme_babble()
+        print result
+        flash('{}'.format(result))
+
+    return render_template('gimme.html',title='Gimme a Babble', form=form)
+
 
 

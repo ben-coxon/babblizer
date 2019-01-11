@@ -1,6 +1,7 @@
 #!/usr/bin/python
 from babblist import Babble
 from add_babble import AddBabble
+from lookup_babble import LookUpBabble
 import random
 
 
@@ -12,7 +13,6 @@ class BenTest():
 		if words.find(" ") != -1:
 			self.words = words.lower()[:words.find(" ")]
 		else: self.words = words.lower() 
-		print "BenTest instantiated with >" + self.words +"<"
 
 		self.babble, self.other = Babble(dict).open_dicts()
 
@@ -36,14 +36,12 @@ class NewBabble:
 	def new_babble(self):
 		return AddBabble(dict, self.yousay, self.isay).add()
 
+class GimmeBabble:
+	def __init__(self, gimme):
+		self.gimme = gimme
+
+	def gimme_babble(self):
+		return LookUpBabble(dict, self.gimme).rand_babble()
 
 
 
-
-
-# test = BenTest("KoALA").fnord()
-
-# print test
-
-
-# NewBabble().new_babble()
