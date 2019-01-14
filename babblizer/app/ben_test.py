@@ -5,7 +5,7 @@ from lookup_babble import LookUpBabble
 import random
 
 
-dict = "app/babbledict.json"
+dict = "babblizer/app/babbledict.json"
 
 
 class BenTest():

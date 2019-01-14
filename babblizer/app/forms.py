@@ -12,9 +12,14 @@ class LoginForm(Form):
 class DemoForm(Form):
     build = StringField('demo',validators=[DataRequired()])
 
-class GimmeForm(Form):
-    gimme = StringField('gimme',  validators=[DataRequired()])
 
 class AddForm(Form):
     yousay = StringField('yousay', validators=[DataRequired()])
     isay = StringField('isay', validators=[DataRequired()])
+
+
+## TEST
+
+class syncForm(Form):
+	sync = StringField('sync', validators=[DataRequired()])
+
